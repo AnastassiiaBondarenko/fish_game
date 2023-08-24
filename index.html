@@ -9,7 +9,11 @@
     <meta name="keywords" content="game for cats, catch fish, fish games, cat games">
     <meta name="author" content="Anastasiia Bondarenko">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gluten&family=Questrial&display=swap" rel="stylesheet">
     <title> Catch Fish </title>
     <link rel="icon" type="image/png" href="assets/images/fish1.png">
 </head>
@@ -19,13 +23,12 @@
     <nav class="navbar upbar">
         <ul class="navbar_items" id="menu-nav">
             <li>
-                <a href="javascript:void(0)" id="home-link" aria-label="Go to the home view">Home</a>
-            </li>
+                <a href="javascript:void(0)" id="home-link" aria-label="Go to the home view"> <img
+                        src="assets/images/icon-home.png"> </a> </li>
             <li>
-                <a href="javascript:void(0)" id="rules-link" aria-label="Go to the rules view">Instructions</a>
-            </li>
-        </ul>
-        <!-- Game Controls -->
+                <a href="javascript:void(0)" id="rules-link" aria-label="Go to the rules view"> <img
+                        src="assets/images/icon-info.png"> </a> </li>
+        </ul> <!-- Game Controls -->
         <div class="game_bar">
             <div class="play_item pause-stop_control hide">
                 <i class="fas fa-pause"></i>
@@ -33,44 +36,39 @@
                 <i class="fas fa-stop"></i>
             </div>
             <div class="timer_cn hide">
-                <span id="timer">01:00</span>
+                <span id="timer"> <img src="assets/images/icon-timer.png">01:00 </span>
             </div>
             <div class="score_cn hide">
-                <span id="score">0</span>
+                <span id="score"><img src="assets/images/icon-score.png"> 0</span>
             </div>
         </div>
         <div class="sound" id="sound">
-            <i class="fas fa-volume-up hide" id="sound-on"></i>
-            <i class="fas fa-volume-mute" id="sound-off"></i>
-        </div>
-    </nav>
-    <!-- main section -->
-    <main class="main" id="main">
-        <div class="image_holder" id="back-image">
-            <img src="assets/images/backfish.png" alt="sea background" class="main-img" />
-        </div>
-        <!-- start block -->
-        <div class="main_block" id="main-block">
-            <h1 class="main_title">Catch Fish</h1>
-            <a class="btn btn_play play-btn" aria-label="">
-                <img src="assets/images/play.png" alt="Play button icon" />
-            </a>
-        </div>
-        <!-- instruction section -->
-        <div class="rules_section hide" id="rules">
-            <button class="rules_close" id="rules-close">&times;</button>
-            <div class="rules_tab rules_tab--active" data-tab="1"><i class="fas fa-info-circle"></i>
-                <div class="rules_tab--title">Instruction</div>
-            </div>
-            <!-- instruction content section -->
-            <div class="rules_content rules_content--active">
-                <h2 class="rules_content--title">Instruction</h2>
-                <div class="rules_content--howtoplay">
-                    <p>You have to click on as many fish as possible in one minute. </p>
-                </div>
-            </div>
-        </div>
-    </main>
+            <i class="fas fa-volume-up hide" id="sound-on"><img src="assets/images/icon-sound.png"></i>
+            <i class="fas fa-volume-mute" id="sound-off"><img src="assets/images/icon-mute.png" </i> </div> </nav> <!--
+                    main section -->
+                <main class="main" id="main">
+                    <!-- start block -->
+                    <div class="main_block" id="main-block">
+                        <h1 class="main_title">Catch Fish</h1>
+                        <a class="btn btn_play play-btn" aria-label="">
+                            <img class="main_img" src="assets/images/icon-play.png" alt="Play button icon" />
+                        </a>
+                    </div>
+                    <!-- instruction section -->
+                    <div class="rules_section hide" id="rules">
+                        <button class="rules_close" id="rules-close">&times;</button>
+                        <div class="rules_tab rules_tab--active" data-tab="1"><i class="fas fa-info-circle"></i>
+                            <div class="rules_tab--title">Instruction</div>
+                        </div>
+                        <!-- instruction content section -->
+                        <div class="rules_content rules_content--active">
+                            <h2 class="rules_content--title">Instruction</h2>
+                            <div class="rules_content--howtoplay">
+                                <p>You have to click on as many fish as possible in one minute. </p>
+                            </div>
+                        </div>
+                    </div>
+                </main>
 </body>
 
 </html>

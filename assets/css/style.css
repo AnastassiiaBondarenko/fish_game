@@ -5,10 +5,122 @@
     padding: 0;
 }
 
-body,
-h1,
-h2,
-p {
+
+ul {
+    list-style: none;
     margin: 0;
     padding: 0;
+}
+
+ul li {
+    margin-left: 0;
+    padding-left: 0;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+}
+
+body {
+    font-size: 1.5rem;
+    font-family: 'Gluten', cursive;
+    font-family: 'Questrial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/backfish.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(142, 235, 249);
+}
+
+/* ------ navigation ------ */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1.5rem 3rem;
+}
+
+.navbar_items {
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    flex-direction: row;
+    justify-content: start;
+
+    align-items: center;
+}
+
+.navbar_items li:not(:first-child) {
+    margin-left: 1.9rem;
+}
+
+.navbar_items li {
+    display: inline-block;
+    border-radius: 2rem;
+    font-size: 5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar_items li:hover {
+    transform: scale(1.1);
+}
+
+/* Game mode Bar */
+.game_bar {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* ----- main ----- */
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.main_block {
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main_img {
+    width: 180%;
+    margin-top: 5rem;
+}
+
+.main_img:hover {
+    transform: scale(1.1);
+}
+
+.main_title {
+    font-family: 'Gluten', cursive;
+    font-size: 6rem;
+    color: rgb(64, 182, 193);
+    font-weight: 800;
+    -webkit-text-stroke: 1px #0b7484;
 }

@@ -32,10 +32,17 @@
         <!-- Game Controls -->
         <div class="game_bar">
             <div class="play_item pause-stop_control hide">
-                <i class="fas fa-pause"></i>
-                <i class="fas fa-play hide"></i>
-                <i class="fas fa-stop"></i>
+                <i class="fas fa-pause" id="pause-button">
+                    <img src="./assets/images/pause-icon.png" alt="Pause">
+                </i>
+                <i class="fas fa-play hide" id="resume-button">
+                    <img src="./assets/images/icon-play.png" alt="Play">
+                </i>
+                <i class="fas fa-stop" id="stop-button">
+                    <img src="" alt="">
+                </i>
             </div>
+
             <div class="timer_cn hide">
                 <span id="timer"> <img src="assets/images/icon-timer.png">01:00 </span>
             </div>
@@ -48,7 +55,7 @@
                 <img src="assets/images/icon-sound.png" id="sound-icon">
             </span>
         </div>
-        <audio id="audio-element" src="path-to-your-audio-file.mp3"></audio>
+        <audio id="audio-element" src="assets/images/underwater.mp3"></audio>
 
     </nav>
     <!-- main section -->
@@ -74,22 +81,26 @@
                 </div>
             </div>
         </div>
+        <div id="confirmation-modal" class="modal hide">
+            <div class="modal-content">
+                <p>You paused the game. Do you want to continue or go to the home page?</p>
+                <button id="continue-button">Continue</button>
+                <button id="home-button">Go to Home</button>
+            </div>
+        </div>
+
     </main>
     <section class="game_section hide" id="game">
         <div id="fish-container">
             <!-- Fish 1 -->
             <div class="fish" id="fish1"></div>
-
             <!-- Fish 2 -->
             <div class="fish" id="fish2"></div>
-
             <!-- Fish 3 -->
             <div class="fish" id="fish3"></div>
-
             <!-- Fish 4 -->
             <div class="fish" id="fish4"></div>
         </div>
-
     </section>
     <script src="./assets/js/script.js"></script>
 </body>

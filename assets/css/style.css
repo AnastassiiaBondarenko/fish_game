@@ -136,6 +136,35 @@ body {
     width: 3rem;
 }
 
+/* pause  */
+
+#pause-button,
+#resume-button {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+
+}
+
+#pause-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#pause-button:hover,
+#resume-button:hover {
+    transform: scale(1.1);
+}
 
 
 /* ----- main ----- */

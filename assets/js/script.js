@@ -1,49 +1,123 @@
-// Get a reference to the rules section, the rules link, and the close button
 const rulesSection = document.getElementById("rules");
 const rulesLink = document.getElementById("rules-link");
 const closeButton = document.getElementById("rules-close");
-
-// Function to open the rules section
+const soundControl = document.getElementById("sound-control");
+const soundIcon = document.getElementById("sound-icon");
+const audioElement = document.getElementById("audio-element");
+const startButton = document.querySelector(".start-btn");
+const mainTitle = document.querySelector(".main_title");
+const playBlock = document.querySelector(".main_block");
+const gameSection = document.getElementById("game");
+const pauseButton = document.getElementById("pause-button");
+const resumeButton = document.getElementById("resume-button");
+const timer = document.getElementById("timer");
+// open and close rules section 
 function openRulesSection() {
     rulesSection.classList.add("show");
 }
 
-// Function to close the rules section
 function closeRulesSection() {
     rulesSection.classList.remove("show");
 }
 
-// Add a click event listener to the rules link to open the rules section
 rulesLink.addEventListener("click", openRulesSection);
 
-// Add a click event listener to the close button to close the rules section
 closeButton.addEventListener("click", closeRulesSection);
 
-// Get references to the sound control, sound icon, and audio element
-const soundControl = document.getElementById("sound-control");
-const soundIcon = document.getElementById("sound-icon");
-const audioElement = document.getElementById("audio-element");
-
-// Initialize sound status
+// sound on and off 
 let soundOn = false;
 
-// Function to toggle sound on and off
 function toggleSound() {
     if (soundOn) {
         audioElement.pause();
-        audioElement.currentTime = 0; // Rewind audio to the beginning
-        soundIcon.src = "assets/images/icon-mute.png"; // Replace with sound off icon
+        audioElement.currentTime = 0;
+        soundIcon.src = "assets/images/icon-mute.png";
     } else {
         audioElement.play();
-        soundIcon.src = "assets/images/icon-sound.png"; // Replace with sound on icon
+        soundIcon.src = "assets/images/icon-sound.png";
     }
-    soundOn = !soundOn; // Toggle sound status
+    soundOn = !soundOn;
 }
 
-// Initialize with sound off
 audioElement.pause();
-audioElement.currentTime = 0; // Rewind audio to the beginning
-soundIcon.src = "assets/images/icon-mute.png"; // Replace with sound off icon
+audioElement.currentTime = 0;
+soundIcon.src = "assets/images/icon-mute.png";
 
-// Add a click event listener to the sound control
 soundControl.addEventListener("click", toggleSound);
+
+
+
+// start game and pause
+let gameStarted = false;
+let timerInterval;
+let timeLeft = 60;
+
+
+
+// Function to start the game
+function startGame() {
+    mainTitle.style.display = "none";
+    playBlock.style.display = "none";
+
+    gameSection.classList.remove("hide");
+
+    pauseButton.style.display = "block";
+    resumeButton.style.display = "none";
+
+    updateTimerDisplay(timeLeft);
+    timerInterval = setInterval(function () {
+        timeLeft--;
+        updateTimerDisplay(timeLeft);
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            endGame();
+        }
+    }, 1000);
+
+    pauseButton.addEventListener("click", pauseGame);
+}
+
+// timer 
+function updateTimerDisplay(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    timer.textContent = `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+}
+
+//  pause
+function pauseGame() {
+    clearInterval(timerInterval);
+    pauseButton.style.display = "none";
+    resumeButton.style.display = "block";
+    pauseButton.removeEventListener("click", pauseGame);
+    resumeButton.addEventListener("click", resumeGame);
+}
+
+// resume 
+function resumeGame() {
+    timerInterval = setInterval(function () {
+        timeLeft--;
+        updateTimerDisplay(timeLeft);
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            endGame();
+        }
+    }, 1000);
+    pauseButton.style.display = "block";
+    resumeButton.style.display = "none";
+    resumeButton.removeEventListener("click", resumeGame);
+    pauseButton.addEventListener("click", pauseGame);
+}
+
+//  end the game
+function endGame() {
+    clearInterval(timerInterval);
+    pauseButton.style.display = "none";
+}
+
+startButton.addEventListener("click", function () {
+    if (!gameStarted) {
+        startGame();
+        gameStarted = true;
+    }
+});

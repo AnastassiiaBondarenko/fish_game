@@ -40,6 +40,7 @@ body {
     background-image: url('../images/backfish.png');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     background-color: rgb(142, 235, 249);
 }
 
@@ -47,19 +48,18 @@ body {
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding: 1.5rem 3rem;
+    justify-content: space-between;
+    padding: 1rem 2rem;
 }
 
 .navbar_items {
     width: 100%;
-    padding: 1em;
+
     display: flex;
     flex-direction: column;
     justify-content: left;
     flex-direction: row;
     justify-content: start;
-
     align-items: center;
 }
 
@@ -88,6 +88,56 @@ body {
     position: relative;
 }
 
+.timer_cn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer_cn span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.timer_cn img {
+    width: 3rem;
+}
+
+
+.sound_icon {
+    width: 3rem;
+    top: -0.4rem;
+    right: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+
+
+.score_cn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.score_cn span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.score_cn img {
+    width: 3rem;
+}
+
+
+
 /* ----- main ----- */
 .main {
     display: flex;
@@ -97,30 +147,170 @@ body {
     width: 100%;
     margin: 0 auto;
     position: relative;
-    overflow: hidden;
+
 }
 
 .main_block {
-    top: 50%;
-    left: 50%;
+    padding-top: 6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.main_img {
-    width: 180%;
-    margin-top: 5rem;
+.btn_play {
+    padding-top: 3rem;
+    width: 7rem;
 }
 
-.main_img:hover {
+.btn_play:hover {
     transform: scale(1.1);
 }
 
 .main_title {
     font-family: 'Gluten', cursive;
     font-size: 6rem;
-    color: rgb(64, 182, 193);
+    color: rgb(85, 212, 224);
     font-weight: 800;
     -webkit-text-stroke: 1px #0b7484;
+}
+
+/* rules  */
+
+.rules_section {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.rules_section.show {
+    display: flex;
+}
+
+
+.rules_close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+
+.rules_content {
+    background: rgb(143, 222, 226);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.rules_content--title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.rules_content--howtoplay {
+    font-size: 18px;
+    font-family: 'Questrial', sans-serif;
+
+}
+
+
+.rules_overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+.rules_overlay.show {
+    display: block;
+}
+
+
+#rules-link {
+    cursor: pointer;
+}
+
+#rules-link:hover {
+    text-decoration: underline;
+    color: #0099cc;
+
+}
+
+.rules_close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.rules_close:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* fish style  */
+
+.fish {
+    width: 70px;
+    height: 70px;
+    background-image: url('../images/fishgame.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    cursor: pointer;
+    animation-name: swim;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes swim {
+    0% {
+        transform: translate(0, 0);
+
+    }
+
+    25% {
+        transform: translate(10px, 5px);
+
+    }
+
+    50% {
+        transform: translate(-10px, -5px);
+
+    }
+
+    75% {
+        transform: translate(5px, 10px);
+
+    }
+
+    100% {
+        transform: translate(0, 0);
+
+    }
 }

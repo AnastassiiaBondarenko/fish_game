@@ -28,7 +28,8 @@
             <li>
                 <a href="javascript:void(0)" id="rules-link" aria-label="Go to the rules view"> <img
                         src="assets/images/icon-info.png"> </a> </li>
-        </ul> <!-- Game Controls -->
+        </ul>
+        <!-- Game Controls -->
         <div class="game_bar">
             <div class="play_item pause-stop_control hide">
                 <i class="fas fa-pause"></i>
@@ -39,36 +40,58 @@
                 <span id="timer"> <img src="assets/images/icon-timer.png">01:00 </span>
             </div>
             <div class="score_cn hide">
-                <span id="score"><img src="assets/images/icon-score.png"> 0</span>
+                <span id="score"><img src="assets/images/icon-score.png">0</span>
             </div>
         </div>
-        <div class="sound" id="sound">
-            <i class="fas fa-volume-up hide" id="sound-on"><img src="assets/images/icon-sound.png"></i>
-            <i class="fas fa-volume-mute" id="sound-off"><img src="assets/images/icon-mute.png" </i> </div> </nav> <!--
-                    main section -->
-                <main class="main" id="main">
-                    <!-- start block -->
-                    <div class="main_block" id="main-block">
-                        <h1 class="main_title">Catch Fish</h1>
-                        <a class="btn btn_play play-btn" aria-label="">
-                            <img class="main_img" src="assets/images/icon-play.png" alt="Play button icon" />
-                        </a>
-                    </div>
-                    <!-- instruction section -->
-                    <div class="rules_section hide" id="rules">
-                        <button class="rules_close" id="rules-close">&times;</button>
-                        <div class="rules_tab rules_tab--active" data-tab="1"><i class="fas fa-info-circle"></i>
-                            <div class="rules_tab--title">Instruction</div>
-                        </div>
-                        <!-- instruction content section -->
-                        <div class="rules_content rules_content--active">
-                            <h2 class="rules_content--title">Instruction</h2>
-                            <div class="rules_content--howtoplay">
-                                <p>You have to click on as many fish as possible in one minute. </p>
-                            </div>
-                        </div>
-                    </div>
-                </main>
+        <div class="sound_cn" id="sound">
+            <span class="sound_icon" id="sound-control">
+                <img src="assets/images/icon-sound.png" id="sound-icon">
+            </span>
+        </div>
+        <audio id="audio-element" src="path-to-your-audio-file.mp3"></audio>
+
+    </nav>
+    <!-- main section -->
+    <main class="main" id="main">
+        <!-- start block -->
+        <div class="main_block" id="main-block">
+            <h1 class="main_title">Catch Fish</h1>
+            <a class="btn btn_play play-btn" aria-label="">
+                <span class="btn btn_play start-btn" aria-label="Start the game">
+                    <img src="assets/images/icon-play.png">
+                </span>
+
+            </a>
+        </div>
+        <!-- instruction section -->
+        <div class="rules_section" id="rules">
+            <button class="rules_close" id="rules-close">&times;</button>
+            <!-- instruction content section -->
+            <div class="rules_content rules_content--active">
+                <h2 class="rules_content--title">Instruction</h2>
+                <div class="rules_content--howtoplay">
+                    <p>You have to click on as many fish as possible in one minute. </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section class="game_section hide" id="game">
+        <div id="fish-container">
+            <!-- Fish 1 -->
+            <div class="fish" id="fish1"></div>
+
+            <!-- Fish 2 -->
+            <div class="fish" id="fish2"></div>
+
+            <!-- Fish 3 -->
+            <div class="fish" id="fish3"></div>
+
+            <!-- Fish 4 -->
+            <div class="fish" id="fish4"></div>
+        </div>
+
+    </section>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>

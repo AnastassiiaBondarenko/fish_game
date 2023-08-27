@@ -11,6 +11,10 @@ const gameSection = document.getElementById("game");
 const pauseButton = document.getElementById("pause-button");
 const resumeButton = document.getElementById("resume-button");
 const timer = document.getElementById("timer");
+const confirmationModal = document.getElementById("confirmation-modal");
+const continueButton = document.getElementById("continue-button");
+const homeButton = document.getElementById("home-button");
+
 // open and close rules section 
 function openRulesSection() {
     rulesSection.classList.add("show");
@@ -55,10 +59,12 @@ let timeLeft = 60;
 
 
 // Function to start the game
+
+
 function startGame() {
     mainTitle.style.display = "none";
     playBlock.style.display = "none";
-
+    gameSection.classList.add("bg-active");
     gameSection.classList.remove("hide");
 
     pauseButton.style.display = "block";
@@ -84,13 +90,42 @@ function updateTimerDisplay(seconds) {
     timer.textContent = `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
 }
 
+
+
 //  pause
+pauseButton.style.display = "none";
+resumeButton.style.display = "none";
+confirmationModal.style.display = "none";
+
+pauseButton.addEventListener("click", () => {
+    confirmationModal.style.display = "block";
+});
+
+function hideModal() {
+    confirmationModal.style.display = "none";
+}
+
+
+continueButton.addEventListener("click", () => {
+    hideModal();
+    resumeGame();
+});
+
+
+homeButton.addEventListener("click", () => {
+    hideModal();
+    endGame()
+    window.location.href = window.location.origin;
+});
+
+
 function pauseGame() {
     clearInterval(timerInterval);
     pauseButton.style.display = "none";
     resumeButton.style.display = "block";
     pauseButton.removeEventListener("click", pauseGame);
     resumeButton.addEventListener("click", resumeGame);
+
 }
 
 // resume 
@@ -113,6 +148,8 @@ function resumeGame() {
 function endGame() {
     clearInterval(timerInterval);
     pauseButton.style.display = "none";
+    gameSection.classList.remove("bg-active");
+
 }
 
 startButton.addEventListener("click", function () {
@@ -121,3 +158,6 @@ startButton.addEventListener("click", function () {
         gameStarted = true;
     }
 });
+
+
+// game area 

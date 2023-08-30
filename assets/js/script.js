@@ -15,13 +15,20 @@ const confirmationModal = document.getElementById("confirmation-modal");
 const continueButton = document.getElementById("continue-button");
 const homeButton = document.getElementById("home-button");
 
+const endModal = document.getElementById("end-game-modal");
+const finalScore = document.getElementById("final-score");
+const returnButton = document.getElementById("return-button");
+
+
 // open and close rules section 
 function openRulesSection() {
     rulesSection.classList.add("show");
+    pauseGame();
 }
 
 function closeRulesSection() {
     rulesSection.classList.remove("show");
+    resumeGame();
 }
 
 rulesLink.addEventListener("click", openRulesSection);
@@ -55,21 +62,27 @@ soundControl.addEventListener("click", toggleSound);
 let gameStarted = false;
 let timerInterval;
 let timeLeft = 60;
-
+let gameEnded = false;
 
 
 // Function to start the game
 
 
 function startGame() {
+
+    if (gameEnded) {
+        return;
+    }
     mainTitle.style.display = "none";
     playBlock.style.display = "none";
-    gameSection.classList.add("bg-active");
+    const gameContainer = document.getElementById("game");
+    gameContainer.style.backgroundImage = 'url("../images/fishplay.png")';
     gameSection.classList.remove("hide");
 
     pauseButton.style.display = "block";
     resumeButton.style.display = "none";
 
+    document.querySelector('.timer_cn').classList.remove("hide");
     updateTimerDisplay(timeLeft);
     timerInterval = setInterval(function () {
         timeLeft--;
@@ -125,8 +138,13 @@ function pauseGame() {
     resumeButton.style.display = "block";
     pauseButton.removeEventListener("click", pauseGame);
     resumeButton.addEventListener("click", resumeGame);
-
+    fishElements.forEach((fish) => {
+        const computedStyle = window.getComputedStyle(fish);
+        fish.style.animationPlayState = computedStyle.getPropertyValue("animation-play-state") === "paused" ? "running" : "paused";
+    });
 }
+
+
 
 // resume 
 function resumeGame() {
@@ -142,6 +160,9 @@ function resumeGame() {
     resumeButton.style.display = "none";
     resumeButton.removeEventListener("click", resumeGame);
     pauseButton.addEventListener("click", pauseGame);
+    fishElements.forEach((fish) => {
+        fish.style.animationPlayState = "running";
+    });
 }
 
 //  end the game
@@ -149,8 +170,27 @@ function endGame() {
     clearInterval(timerInterval);
     pauseButton.style.display = "none";
     gameSection.classList.remove("bg-active");
-
+    finalScore.textContent = score;
+    endModal.style.display = "block";
+    gameEnded = true;
 }
+
+function closeModalAndRedirect() {
+    endModal.style.display = "none";
+    window.location.href = window.location.origin;
+    gameEnded = false;
+}
+
+returnButton.addEventListener("click", closeModalAndRedirect);
+
+startButton.addEventListener("click", function () {
+    if (!gameStarted) {
+        startGame();
+        gameStarted = true;
+    }
+});
+
+
 
 startButton.addEventListener("click", function () {
     if (!gameStarted) {
@@ -161,3 +201,42 @@ startButton.addEventListener("click", function () {
 
 
 // game area 
+const fishElements = document.querySelectorAll(".fish");
+const scoreElement = document.getElementById("score");
+
+let score = 0;
+
+function playCatchSound() {
+    newAudio.src = "../images/bubbles.mp3";
+}
+
+function updateScore() {
+    score++;
+    scoreElement.textContent = score;
+}
+
+function moveFishToRandomPosition(fish) {
+    const fishWidth = fish.offsetWidth;
+    const fishHeight = fish.offsetHeight;
+    const maxX = window.innerWidth - fishWidth;
+    const maxY = window.innerHeight - fishHeight;
+    const newX = Math.random() * maxX;
+    const newY = Math.random() * maxY;
+
+
+    fish.style.transform = `translate(${newX}px, ${newY}px)`;
+}
+
+fishElements.forEach((fish, index) => {
+    fish.addEventListener("click", () => {
+        playCatchSound();
+        updateScore();
+        fish.style.display = "none";
+        setTimeout(() => {
+            fish.style.display = "block";
+            moveFishToRandomPosition(fish);
+        }, 1000);
+    });
+
+    moveFishToRandomPosition(fish);
+});

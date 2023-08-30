@@ -9,10 +9,6 @@
     <meta name="keywords" content="game for cats, catch fish, fish games, cat games">
     <meta name="author" content="Anastasiia Bondarenko">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gluten&family=Questrial&display=swap" rel="stylesheet">
     <title> Catch Fish </title>
     <link rel="icon" type="image/png" href="assets/images/fish1.png">
@@ -20,7 +16,8 @@
 
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar upbar">
+
+    <header class="navbar upbar">
         <ul class="navbar_items" id="menu-nav">
             <li>
                 <a href="javascript:void(0)" id="home-link" aria-label="Go to the home view"> <img
@@ -31,16 +28,14 @@
         </ul>
         <!-- Game Controls -->
         <div class="game_bar">
-            <div class="play_item pause-stop_control hide">
+            <div class="play_item pause-stop_control">
                 <i class="fas fa-pause" id="pause-button">
                     <img src="./assets/images/pause-icon.png" alt="Pause">
                 </i>
-                <i class="fas fa-play hide" id="resume-button">
+                <i class="fas fa-play" id="resume-button">
                     <img src="./assets/images/icon-play.png" alt="Play">
                 </i>
-
             </div>
-
             <div class="timer_cn hide">
                 <span id="timer"> <img src="assets/images/icon-timer.png">01:00 </span>
             </div>
@@ -55,7 +50,7 @@
         </div>
         <audio id="audio-element" src="assets/images/underwater.mp3"></audio>
 
-    </nav>
+    </header>
     <!-- main section -->
     <main class="main" id="main">
         <!-- start block -->
@@ -86,10 +81,7 @@
                 <button id="home-button">Go to Home</button>
             </div>
         </div>
-
-
         <div class="game_section hide" id="game">
-
             <div id="fish-container">
                 <!-- Fish 1 -->
                 <div class="fish" id="fish1"></div>
@@ -101,6 +93,15 @@
                 <div class="fish" id="fish4"></div>
             </div>
         </div>
+        <div id="end-game-modal" class="end_modal">
+            <div class="end_modal-content">
+                <h2>Game Over!</h2>
+                <p>Your score is <span id="final-score">0</span>. It's so cool! Congratulations!</p>
+                <button id="return-button">Return to Main Screen</button>
+            </div>
+        </div>
+
+
     </main>
     <script src="./assets/js/script.js"></script>
 </body>

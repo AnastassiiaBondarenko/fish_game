@@ -37,11 +37,12 @@ body {
     flex-direction: column;
     width: 100%;
     height: 100vh;
-    background-image: url('../images/backfish.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     background-color: rgb(142, 235, 249);
+    overflow: hidden;
+}
+
+.hide {
+    display: none;
 }
 
 /* ------ navigation ------ */
@@ -104,6 +105,7 @@ body {
 
 .timer_cn img {
     width: 3rem;
+    height: auto;
 }
 
 
@@ -174,13 +176,17 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
+    height: 100vh;
     margin: 0 auto;
     position: relative;
-
+    background-image: url('../images/backfish.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .main_block {
-    padding-top: 6rem;
+    margin-top: -9rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -367,44 +373,211 @@ body {
 
 
 /* fish style  */
+.fish-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
 
 .fish {
-    width: 70px;
-    height: 70px;
+    width: 260px;
+    height: 180px;
+    position: absolute;
+    cursor: pointer;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+
+#fish1 {
+    animation: swim1 15s linear infinite;
     background-image: url('../images/fishgame.png');
     background-size: cover;
     background-repeat: no-repeat;
-    position: absolute;
-    cursor: pointer;
-    animation-name: swim;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
 }
 
-@keyframes swim {
+
+#fish2 {
+    animation: swim2 15s linear infinite;
+    background-image: url('../images/fishgame.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#fish3 {
+    animation: swim3 15s linear infinite;
+    background-image: url('../images/fishgame1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+#fish4 {
+    animation: swim4 15s linear infinite;
+    background-image: url('../images/fishgame1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@keyframes swim1 {
     0% {
-        transform: translate(0, 0);
-
+        transform: translateX(-90%) scaleX(1) translateY(-90%);
     }
 
-    25% {
-        transform: translate(10px, 5px);
-
+    20% {
+        transform: translateX(25vw) scaleX(1) translateY(10vh);
     }
 
-    50% {
-        transform: translate(-10px, -5px);
-
+    40% {
+        transform: translateX(50vw) scaleX(1) translateY(-30vh);
     }
 
-    75% {
-        transform: translate(5px, 10px);
+    60% {
+        transform: translateX(25vw) scaleX(1) translateY(20vh);
+    }
 
+    80% {
+        transform: translateX(-100%) scaleX(1) translateY(-40vh);
     }
 
     100% {
-        transform: translate(0, 0);
-
+        transform: translateX(-100%) scaleX(1) translateY(30vh);
     }
+}
+
+@keyframes swim2 {
+    0% {
+        transform: translateX(100%) scaleX(-1) translateY(100%);
+    }
+
+    20% {
+        transform: translateX(-25vw) scaleX(-1) translateY(-10vh);
+    }
+
+    40% {
+        transform: translateX(-50vw) scaleX(-1) translateY(30vh);
+    }
+
+    60% {
+        transform: translateX(-25vw) scaleX(-1) translateY(-20vh);
+    }
+
+    80% {
+        transform: translateX(100%) scaleX(-1) translateY(40vh);
+    }
+
+    100% {
+        transform: translateX(100%) scaleX(-1) translateY(-30vh);
+    }
+}
+
+@keyframes swim3 {
+    0% {
+        transform: translateX(100%) scaleX(-1) translateY(100%);
+    }
+
+    20% {
+        transform: translateX(-25vw) scaleX(-1) translateY(-10vh);
+    }
+
+    40% {
+        transform: translateX(-50vw) scaleX(-1) translateY(30vh);
+    }
+
+    60% {
+        transform: translateX(-25vw) scaleX(-1) translateY(-20vh);
+    }
+
+    80% {
+        transform: translateX(100%) scaleX(-1) translateY(40vh);
+    }
+
+    100% {
+        transform: translateX(100%) scaleX(-1) translateY(-30vh);
+    }
+}
+
+
+@keyframes swim4 {
+    0% {
+        transform: translateX(-100%) scaleX(1) translateY(-100%);
+    }
+
+    20% {
+        transform: translateX(25vw) scaleX(1) translateY(10vh);
+    }
+
+    40% {
+        transform: translateX(50vw) scaleX(1) translateY(-30vh);
+    }
+
+    60% {
+        transform: translateX(25vw) scaleX(1) translateY(20vh);
+    }
+
+    80% {
+        transform: translateX(-100%) scaleX(1) translateY(-40vh);
+    }
+
+    100% {
+        transform: translateX(-100%) scaleX(1) translateY(30vh);
+    }
+}
+
+
+/* end game style  */
+
+
+.end_modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.end_modal-content {
+    background-color: rgb(117, 215, 222);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.end_modal h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.end_modal p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#return-button {
+    background-color: #26768f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#return-button:hover {
+    background-color: #18545d;
 }

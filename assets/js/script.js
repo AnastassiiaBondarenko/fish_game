@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const finalScore = document.getElementById("final-score");
     const returnButton = document.getElementById("return-button");
     const catchSound = document.getElementById("catchSound");
+    const homeIcon = document.getElementById("home-link");
 
 
     // open and close rules section 
@@ -172,6 +173,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //  end the game
+    homeIcon.addEventListener("click", () => {
+        pauseGame();
+        hideModal();
+        endGame();
+    });
+
     function endGame() {
         clearInterval(timerInterval);
         pauseButton.style.display = "none";

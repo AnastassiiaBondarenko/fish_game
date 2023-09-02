@@ -41,10 +41,6 @@ body {
     overflow: hidden;
 }
 
-.hide {
-    display: none;
-}
-
 /* ------ navigation ------ */
 .navbar {
     display: flex;
@@ -87,6 +83,7 @@ body {
     display: flex;
     align-items: center;
     position: relative;
+    justify-content: space-around;
 }
 
 .timer_cn {
@@ -136,6 +133,11 @@ body {
 
 .score_cn img {
     width: 3rem;
+}
+
+#timer,
+#score {
+    display: block;
 }
 
 /* pause  */
@@ -195,6 +197,7 @@ body {
 .btn_play {
     padding-top: 3rem;
     width: 7rem;
+    cursor: pointer;
 }
 
 .btn_play:hover {
@@ -362,13 +365,7 @@ body {
 }
 
 
-/* game area  */
-.game_section.bg-active {
-    background-image: url("../images/fishplay.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+
 
 
 
@@ -388,6 +385,7 @@ body {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-play-state: running;
+    display: none;
 }
 
 
@@ -527,11 +525,30 @@ body {
 }
 
 
+/* waves */
+@keyframes wave {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.fish.wave {
+    animation: wave 0.2s ease-in-out;
+}
+
+
 /* end game style  */
 
 
 .end_modal {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -542,6 +559,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 
 .end_modal-content {

@@ -36,10 +36,10 @@
                     <img src="./assets/images/icon-play.png" alt="Play">
                 </i>
             </div>
-            <div class="timer_cn hide">
+            <div class="timer_cn">
                 <span id="timer"> <img src="assets/images/icon-timer.png">01:00 </span>
             </div>
-            <div class="score_cn hide">
+            <div class="score_cn">
                 <span id="score"><img src="assets/images/icon-score.png">0</span>
             </div>
         </div>
@@ -48,7 +48,7 @@
                 <img src="assets/images/icon-sound.png" id="sound-icon">
             </span>
         </div>
-        <audio id="audio-element" src="assets/images/underwater.mp3"></audio>
+        <audio id="audio-element" src="assets/images/water.mp3"></audio>
 
     </header>
     <!-- main section -->
@@ -74,15 +74,17 @@
                 </div>
             </div>
         </div>
-        <div id="confirmation-modal" class="modal hide">
+        <div id="confirmation-modal" class="modal">
             <div class="modal-content">
                 <p>You paused the game. Do you want to continue or go to the home page?</p>
                 <button id="continue-button">Continue</button>
                 <button id="home-button">Go to Home</button>
             </div>
         </div>
-        <div class="game_section hide" id="game">
+        <div class="game_section" id="game">
+
             <div id="fish-container">
+                <audio id="catchSound" src="assets/images/bubbles.mp3"></audio>
                 <!-- Fish 1 -->
                 <div class="fish" id="fish1"></div>
                 <!-- Fish 2 -->

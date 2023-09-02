@@ -185,6 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
         finalScore.textContent = score;
         endModal.style.display = "block";
         gameEnded = true;
+        pauseGame()
     }
 
     function closeModalAndRedirect() {

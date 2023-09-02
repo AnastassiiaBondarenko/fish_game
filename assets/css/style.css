@@ -602,3 +602,66 @@ body {
 #return-button:hover {
     background-color: #18545d;
 }
+
+/* Adjust styles for tablets and smaller screens */
+@media screen and (max-width: 768px) {
+
+
+    body {
+        font-size: 1.2rem;
+    }
+
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+
+
+
+    .navbar_items li:not(:first-child) {
+        margin-left: 1rem;
+    }
+
+    .navbar_items li {
+        font-size: 3rem;
+    }
+
+    .fish {
+        width: 230px;
+        height: 150px;
+    }
+
+
+}
+
+/* Adjust styles for mobile devices */
+@media screen and (max-width: 576px) {
+
+
+    body {
+        font-size: 12px;
+    }
+
+    .navbar {
+        padding: 0.25rem 0.5rem;
+    }
+
+    .navbar_items li:not(:first-child) {
+        margin-left: 0.5rem;
+    }
+
+    .navbar_items li {
+        font-size: 2rem;
+    }
+
+    .navbar_items {
+        width: 7rem;
+    }
+
+    .game_bar {
+        margin-right: -13rem;
+    }
+
+    .sound_cn {
+        width: 3.5rem;
+    }
+}

@@ -61,7 +61,7 @@ body {
 }
 
 .navbar_items li:not(:first-child) {
-    margin-left: 1.9rem;
+    margin-left: 1.7rem;
 }
 
 .navbar_items li {
@@ -91,6 +91,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-left: 0.5rem;
 }
 
 .timer_cn span {
@@ -103,17 +104,16 @@ body {
 }
 
 .timer_cn img {
-    width: 3rem;
+    width: 3.5rem;
     height: auto;
 }
 
 
-.sound_icon {
-    width: 3rem;
-    top: -0.4rem;
-    right: 0;
-    position: relative;
+.sound_cn {
+    width: 4.2rem;
+    height: auto;
     cursor: pointer;
+    margin-left: -1rem;
 }
 
 
@@ -121,7 +121,7 @@ body {
 .score_cn {
     display: inline-block;
     text-align: center;
-
+    margin-left: 1rem;
 }
 
 .score_cn span {
@@ -134,7 +134,7 @@ body {
 }
 
 .score_cn img {
-    width: 3rem;
+    width: 3.5rem;
     vertical-align: middle;
 }
 
@@ -151,8 +151,8 @@ body {
     background-color: #277d97;
     border: none;
     border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
+    width: 3.2rem;
+    height: 3.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -235,20 +235,17 @@ body {
 }
 
 
-.rules_close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 24px;
-    cursor: pointer;
-    color: white;
-}
+
 
 
 .rules_content {
-    background: rgb(143, 222, 226);
-    padding: 20px;
-    border-radius: 10px;
+    font-family: 'Questrial', sans-serif;
+    background-color: #86e4d4;
+    margin: 15% auto;
+    padding: 30px;
+    border: 2px solid #16616e;
+    width: 80%;
+    max-width: 400px;
     text-align: center;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
@@ -292,25 +289,18 @@ body {
 }
 
 .rules_close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 24px;
-    cursor: pointer;
+    background-color: #7b1d16;
     color: white;
-    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
     border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
+
+
 .rules_close:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
 }
 
 
@@ -621,13 +611,128 @@ body {
         margin-left: 1rem;
     }
 
-    .navbar_items li {
-        font-size: 3rem;
+    .navbar_items img,
+    .game_bar img {
+        width: 3.4rem;
+        height: 3.4rem;
+    }
+
+    .main_title {
+        font-size: 5rem;
+    }
+
+    .btn_play img {
+        width: 6rem;
     }
 
     .fish {
         width: 230px;
         height: 150px;
+    }
+
+
+    @keyframes swim1 {
+        0% {
+            transform: translateX(-90%) scaleX(1) translateY(-90%);
+        }
+
+        20% {
+            transform: translateX(10vw) scaleX(1) translateY(10vh);
+        }
+
+        40% {
+            transform: translateX(30vw) scaleX(1) translateY(-30vh);
+        }
+
+        60% {
+            transform: translateX(10vw) scaleX(1) translateY(20vh);
+        }
+
+        80% {
+            transform: translateX(-90%) scaleX(1) translateY(-40vh);
+        }
+
+        100% {
+            transform: translateX(-90%) scaleX(1) translateY(30vh);
+        }
+    }
+
+    @keyframes swim2 {
+        0% {
+            transform: translateX(100%) scaleX(-1) translateY(100%);
+        }
+
+        20% {
+            transform: translateX(-10vw) scaleX(-1) translateY(-10vh);
+        }
+
+        40% {
+            transform: translateX(-30vw) scaleX(-1) translateY(30vh);
+        }
+
+        60% {
+            transform: translateX(-10vw) scaleX(-1) translateY(-20vh);
+        }
+
+        80% {
+            transform: translateX(100%) scaleX(-1) translateY(40vh);
+        }
+
+        100% {
+            transform: translateX(100%) scaleX(-1) translateY(-30vh);
+        }
+    }
+
+    @keyframes swim3 {
+        0% {
+            transform: translateX(100%) scaleX(-1) translateY(100%);
+        }
+
+        20% {
+            transform: translateX(-10vw) scaleX(-1) translateY(-10vh);
+        }
+
+        40% {
+            transform: translateX(-30vw) scaleX(-1) translateY(30vh);
+        }
+
+        60% {
+            transform: translateX(-10vw) scaleX(-1) translateY(-20vh);
+        }
+
+        80% {
+            transform: translateX(100%) scaleX(-1) translateY(40vh);
+        }
+
+        100% {
+            transform: translateX(100%) scaleX(-1) translateY(-30vh);
+        }
+    }
+
+    @keyframes swim4 {
+        0% {
+            transform: translateX(-100%) scaleX(1) translateY(-100%);
+        }
+
+        20% {
+            transform: translateX(10vw) scaleX(1) translateY(10vh);
+        }
+
+        40% {
+            transform: translateX(30vw) scaleX(1) translateY(-30vh);
+        }
+
+        60% {
+            transform: translateX(10vw) scaleX(1) translateY(20vh);
+        }
+
+        80% {
+            transform: translateX(-100%) scaleX(1) translateY(-40vh);
+        }
+
+        100% {
+            transform: translateX(-100%) scaleX(1) translateY(30vh);
+        }
     }
 
 
@@ -638,7 +743,7 @@ body {
 
 
     body {
-        font-size: 12px;
+        font-size: 0.9rem;
     }
 
     .navbar {
@@ -649,6 +754,12 @@ body {
         margin-left: 0.5rem;
     }
 
+    .navbar_items img,
+    .game_bar img {
+        width: 3rem;
+        height: 3rem;
+    }
+
     .navbar_items li {
         font-size: 2rem;
     }
@@ -657,11 +768,119 @@ body {
         width: 7rem;
     }
 
-    .game_bar {
-        margin-right: -13rem;
+    .main_title {
+        font-size: 4rem;
     }
 
-    .sound_cn {
-        width: 3.5rem;
+    #pause-button,
+    #resume-button {
+        width: 2.8rem;
+        height: 2.8rem;
     }
+
+
+    @keyframes swim1 {
+        0% {
+            transform: translateX(-110%) scaleX(1) translateY(-90%);
+        }
+
+        20% {
+            transform: translateX(10vw) scaleX(1) translateY(10vh);
+        }
+
+        40% {
+            transform: translateX(30vw) scaleX(1) translateY(-30vh);
+        }
+
+        60% {
+            transform: translateX(10vw) scaleX(1) translateY(20vh);
+        }
+
+        80% {
+            transform: translateX(-110%) scaleX(1) translateY(-40vh);
+        }
+
+        100% {
+            transform: translateX(-110%) scaleX(1) translateY(30vh);
+        }
+    }
+
+    @keyframes swim2 {
+        0% {
+            transform: translateX(110%) scaleX(-1) translateY(110%);
+        }
+
+        20% {
+            transform: translateX(-10vw) scaleX(-1) translateY(-10vh);
+        }
+
+        40% {
+            transform: translateX(-30vw) scaleX(-1) translateY(30vh);
+        }
+
+        60% {
+            transform: translateX(-10vw) scaleX(-1) translateY(-20vh);
+        }
+
+        80% {
+            transform: translateX(110%) scaleX(-1) translateY(40vh);
+        }
+
+        100% {
+            transform: translateX(110%) scaleX(-1) translateY(-30vh);
+        }
+    }
+
+    @keyframes swim3 {
+        0% {
+            transform: translateX(110%) scaleX(-1) translateY(110%);
+        }
+
+        20% {
+            transform: translateX(-10vw) scaleX(-1) translateY(-10vh);
+        }
+
+        40% {
+            transform: translateX(-30vw) scaleX(-1) translateY(30vh);
+        }
+
+        60% {
+            transform: translateX(-10vw) scaleX(-1) translateY(-20vh);
+        }
+
+        80% {
+            transform: translateX(110%) scaleX(-1) translateY(40vh);
+        }
+
+        100% {
+            transform: translateX(110%) scaleX(-1) translateY(-30vh);
+        }
+    }
+
+    @keyframes swim4 {
+        0% {
+            transform: translateX(-110%) scaleX(1) translateY(-110%);
+        }
+
+        20% {
+            transform: translateX(10vw) scaleX(1) translateY(10vh);
+        }
+
+        40% {
+            transform: translateX(30vw) scaleX(1) translateY(-30vh);
+        }
+
+        60% {
+            transform: translateX(10vw) scaleX(1) translateY(20vh);
+        }
+
+        80% {
+            transform: translateX(-110%) scaleX(1) translateY(-40vh);
+        }
+
+        100% {
+            transform: translateX(-110%) scaleX(1) translateY(30vh);
+        }
+    }
+
 }

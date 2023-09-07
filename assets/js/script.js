@@ -21,17 +21,28 @@ document.addEventListener("DOMContentLoaded", () => {
     const returnButton = document.getElementById("return-button");
     const catchSound = document.getElementById("catchSound");
     const homeIcon = document.getElementById("home-link");
+    const main = document.getElementById("main");
 
 
     // open and close rules section 
     function openRulesSection() {
         rulesSection.classList.add("show");
-        pauseGame();
+        if (gameStarted) {
+            pauseGame();
+        } else {
+            pauseButton.style.display = "none";
+            resumeButton.style.display = "none";
+        }
     }
 
     function closeRulesSection() {
         rulesSection.classList.remove("show");
-        resumeGame();
+        if (gameStarted) {
+            resumeGame();
+        } else {
+            pauseButton.style.display = "none";
+            resumeButton.style.display = "none";
+        }
     }
 
     rulesLink.addEventListener("click", openRulesSection);
@@ -78,11 +89,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         mainTitle.style.display = "none";
         playBlock.style.display = "none";
-        const gameContainer = document.getElementById("game");
-        gameContainer.style.backgroundImage = 'url("assets/images/fishplay.png")';
-        gameContainer.style.backgroundSize = "cover";
-        gameContainer.style.backgroundRepeat = "no-repeat";
-        gameContainer.style.backgroundPosition = "center";
+        main.style.backgroundImage = 'url("assets/images/fishplay.png")';
+        main.style.backgroundSize = "cover";
+        main.style.backgroundRepeat = "no-repeat";
+        main.style.backgroundPosition = "center";
         gameSection.style.display = "block";
         fishElements.forEach((fish) => {
             fish.style.display = "block";
@@ -174,9 +184,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //  end the game
     homeIcon.addEventListener("click", () => {
-        pauseGame();
-        hideModal();
-        endGame();
+        if (gameStarted) {
+            pauseGame();
+            hideModal();
+            endGame();
+        }
+
     });
 
     function endGame() {

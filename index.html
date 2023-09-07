@@ -25,30 +25,33 @@
             <li>
                 <a href="javascript:void(0)" id="rules-link" aria-label="Go to the rules view"> <img
                         src="assets/images/icon-info.png"> </a> </li>
+            <li class="sound_cn" id="sound">
+                <span class="sound_icon" id="sound-control">
+                    <img src="assets/images/icon-sound.png" id="sound-icon">
+                </span>
+                <audio id="audio-element" src="assets/images/water.mp3"></audio></li>
         </ul>
         <!-- Game Controls -->
         <div class="game_bar">
             <div class="play_item pause-stop_control">
                 <i class="fas fa-pause" id="pause-button">
-                    <img src="./assets/images/pause-icon.png" alt="Pause">
+                    <img src="assets/images/pause-icon.png" alt="Pause">
                 </i>
                 <i class="fas fa-play" id="resume-button">
-                    <img src="./assets/images/icon-play.png" alt="Play">
+                    <img src="assets/images/icon-play.png" alt="Play">
                 </i>
             </div>
             <div class="timer_cn">
-                <span id="timer"> <img src="assets/images/icon-timer.png">01:00 </span>
+                <img src="assets/images/icon-timer.png">
+                <span id="timer"> 01:00 </span>
             </div>
             <div class="score_cn">
-                <span id="score"><img src="assets/images/icon-score.png">0</span>
+                <img src="assets/images/icon-score.png">
+                <span id="score">0</span>
             </div>
+
         </div>
-        <div class="sound_cn" id="sound">
-            <span class="sound_icon" id="sound-control">
-                <img src="assets/images/icon-sound.png" id="sound-icon">
-            </span>
-        </div>
-        <audio id="audio-element" src="assets/images/water.mp3"></audio>
+
 
     </header>
     <!-- main section -->
@@ -65,12 +68,14 @@
         </div>
         <!-- instruction section -->
         <div class="rules_section" id="rules">
-            <button class="rules_close" id="rules-close">&times;</button>
+
             <!-- instruction content section -->
             <div class="rules_content rules_content--active">
+
                 <h2 class="rules_content--title">Instruction</h2>
                 <div class="rules_content--howtoplay">
                     <p>You have to click on as many fish as possible in one minute. </p>
+                    <button class="rules_close" id="rules-close">Close</button>
                 </div>
             </div>
         </div>
@@ -105,7 +110,7 @@
 
 
     </main>
-    <script src="./assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

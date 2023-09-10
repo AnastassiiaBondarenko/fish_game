@@ -176,6 +176,7 @@ body {
 
 /* ----- main ----- */
 .main {
+    font-family: 'Questrial', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -218,16 +219,17 @@ body {
 /* rules  */
 
 .rules_section {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 
 .rules_section.show {
@@ -240,23 +242,25 @@ body {
 
 .rules_content {
     font-family: 'Questrial', sans-serif;
-    background-color: #86e4d4;
-    margin: 15% auto;
+    background-color: rgb(117, 215, 222);
     padding: 30px;
-    border: 2px solid #16616e;
-    width: 80%;
-    max-width: 400px;
+    border-radius: 10px;
     text-align: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .rules_content--title {
-    font-size: 24px;
+    font-size: 2rem;
     margin-bottom: 20px;
 }
 
 .rules_content--howtoplay {
-    font-size: 18px;
+    font-size: 1.3rem;
     font-family: 'Questrial', sans-serif;
 
 }
@@ -306,29 +310,45 @@ body {
 
 /* modal  */
 .modal {
-    display: none;
     position: fixed;
-    z-index: 1;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
     background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
 }
 
 .modal-content {
-    font-family: 'Questrial', sans-serif;
-    background-color: #86e4d4;
-    margin: 15% auto;
+    background-color: rgb(117, 215, 222);
     padding: 30px;
-    border: 2px solid #16616e;
-    width: 80%;
-    max-width: 400px;
+    border-radius: 10px;
     text-align: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
+.modal-content.show {
+    display: flex;
+}
+
+.modal h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.modal p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
 
 #continue-button {
     background-color: #088480;
@@ -426,15 +446,15 @@ body {
     }
 
     60% {
-        transform: translateX(25vw) scaleX(1) translateY(20vh);
+        transform: translateX(25vw) scaleX(-1) translateY(20vh);
     }
 
     80% {
-        transform: translateX(-100%) scaleX(1) translateY(-40vh);
+        transform: translateX(-100%) scaleX(-1) translateY(-40vh);
     }
 
     100% {
-        transform: translateX(-100%) scaleX(1) translateY(30vh);
+        transform: translateX(-100%) scaleX(-1) translateY(30vh);
     }
 }
 
@@ -452,15 +472,15 @@ body {
     }
 
     60% {
-        transform: translateX(-25vw) scaleX(-1) translateY(-20vh);
+        transform: translateX(-25vw) scaleX(1) translateY(-20vh);
     }
 
     80% {
-        transform: translateX(100%) scaleX(-1) translateY(40vh);
+        transform: translateX(100%) scaleX(1) translateY(40vh);
     }
 
     100% {
-        transform: translateX(100%) scaleX(-1) translateY(-30vh);
+        transform: translateX(100%) scaleX(1) translateY(-30vh);
     }
 }
 
@@ -478,15 +498,15 @@ body {
     }
 
     60% {
-        transform: translateX(-25vw) scaleX(-1) translateY(-20vh);
+        transform: translateX(-25vw) scaleX(1) translateY(-20vh);
     }
 
     80% {
-        transform: translateX(100%) scaleX(-1) translateY(40vh);
+        transform: translateX(100%) scaleX(1) translateY(40vh);
     }
 
     100% {
-        transform: translateX(100%) scaleX(-1) translateY(-30vh);
+        transform: translateX(100%) scaleX(1) translateY(-30vh);
     }
 }
 
@@ -505,37 +525,19 @@ body {
     }
 
     60% {
-        transform: translateX(25vw) scaleX(1) translateY(20vh);
+        transform: translateX(25vw) scaleX(-1) translateY(20vh);
     }
 
     80% {
-        transform: translateX(-100%) scaleX(1) translateY(-40vh);
+        transform: translateX(-100%) scaleX(-1) translateY(-40vh);
     }
 
     100% {
-        transform: translateX(-100%) scaleX(1) translateY(30vh);
+        transform: translateX(-100%) scaleX(-1) translateY(30vh);
     }
 }
 
 
-/* waves */
-@keyframes wave {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-.fish.wave {
-    animation: wave 0.2s ease-in-out;
-}
 
 
 /* end game style  */
@@ -571,12 +573,13 @@ body {
 
 
 .end_modal h2 {
-    font-size: 24px;
+    font-size: 2.5rem;
     margin-bottom: 10px;
+    color: #7b1d16;
 }
 
 .end_modal p {
-    font-size: 18px;
+    font-size: 1.3rem;
     margin-bottom: 20px;
 }
 
@@ -586,7 +589,7 @@ body {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1.2rem;
 }
 
 #return-button:hover {
@@ -631,6 +634,11 @@ body {
     }
 
 
+    #return-button {
+
+        font-size: 1.1rem;
+    }
+
     @keyframes swim1 {
         0% {
             transform: translateX(-90%) scaleX(1) translateY(-90%);
@@ -645,15 +653,15 @@ body {
         }
 
         60% {
-            transform: translateX(10vw) scaleX(1) translateY(20vh);
+            transform: translateX(10vw) scaleX(-1) translateY(20vh);
         }
 
         80% {
-            transform: translateX(-90%) scaleX(1) translateY(-40vh);
+            transform: translateX(-90%) scaleX(-1) translateY(-40vh);
         }
 
         100% {
-            transform: translateX(-90%) scaleX(1) translateY(30vh);
+            transform: translateX(-90%) scaleX(-1) translateY(30vh);
         }
     }
 
@@ -671,15 +679,15 @@ body {
         }
 
         60% {
-            transform: translateX(-10vw) scaleX(-1) translateY(-20vh);
+            transform: translateX(-10vw) scaleX(1) translateY(-20vh);
         }
 
         80% {
-            transform: translateX(100%) scaleX(-1) translateY(40vh);
+            transform: translateX(100%) scaleX(1) translateY(40vh);
         }
 
         100% {
-            transform: translateX(100%) scaleX(-1) translateY(-30vh);
+            transform: translateX(100%) scaleX(1) translateY(-30vh);
         }
     }
 
@@ -697,15 +705,15 @@ body {
         }
 
         60% {
-            transform: translateX(-10vw) scaleX(-1) translateY(-20vh);
+            transform: translateX(-10vw) scaleX(1) translateY(-20vh);
         }
 
         80% {
-            transform: translateX(100%) scaleX(-1) translateY(40vh);
+            transform: translateX(100%) scaleX(1) translateY(40vh);
         }
 
         100% {
-            transform: translateX(100%) scaleX(-1) translateY(-30vh);
+            transform: translateX(100%) scaleX(1) translateY(-30vh);
         }
     }
 
@@ -723,28 +731,25 @@ body {
         }
 
         60% {
-            transform: translateX(10vw) scaleX(1) translateY(20vh);
+            transform: translateX(10vw) scaleX(-1) translateY(20vh);
         }
 
         80% {
-            transform: translateX(-100%) scaleX(1) translateY(-40vh);
+            transform: translateX(-100%) scaleX(-1) translateY(-40vh);
         }
 
         100% {
-            transform: translateX(-100%) scaleX(1) translateY(30vh);
+            transform: translateX(-100%) scaleX(-1) translateY(30vh);
         }
     }
 
 
 }
 
+
+
 /* Adjust styles for mobile devices */
 @media screen and (max-width: 576px) {
-
-
-    body {
-        font-size: 0.9rem;
-    }
 
     .navbar {
         padding: 0.25rem 0.5rem;
@@ -772,12 +777,50 @@ body {
         font-size: 4rem;
     }
 
+    .fish {
+        width: 200px;
+        height: 130px;
+    }
+
+
+
+    .end_modal-content,
+    .rules_content,
+    .modal-content {
+        padding: 20px;
+    }
+
+    .end_modal h2,
+    .modal h2 {
+        font-size: 1.6rem;
+    }
+
+    .end_modal p,
+    .modal p {
+        font-size: 1rem;
+    }
+
+
+    .rules_content--title {
+        font-size: 1.6rem;
+
+    }
+
+    .rules_content--howtoplay {
+        font-size: 1rem;
+
+    }
+
     #pause-button,
     #resume-button {
         width: 2.8rem;
         height: 2.8rem;
     }
 
+    #return-button {
+
+        font-size: 1rem;
+    }
 
     @keyframes swim1 {
         0% {
@@ -793,15 +836,15 @@ body {
         }
 
         60% {
-            transform: translateX(10vw) scaleX(1) translateY(20vh);
+            transform: translateX(10vw) scaleX(-1) translateY(20vh);
         }
 
         80% {
-            transform: translateX(-110%) scaleX(1) translateY(-40vh);
+            transform: translateX(-110%) scaleX(-1) translateY(-40vh);
         }
 
         100% {
-            transform: translateX(-110%) scaleX(1) translateY(30vh);
+            transform: translateX(-110%) scaleX(-1) translateY(30vh);
         }
     }
 
@@ -819,15 +862,15 @@ body {
         }
 
         60% {
-            transform: translateX(-10vw) scaleX(-1) translateY(-20vh);
+            transform: translateX(-10vw) scaleX(1) translateY(-20vh);
         }
 
         80% {
-            transform: translateX(110%) scaleX(-1) translateY(40vh);
+            transform: translateX(110%) scaleX(1) translateY(40vh);
         }
 
         100% {
-            transform: translateX(110%) scaleX(-1) translateY(-30vh);
+            transform: translateX(110%) scaleX(1) translateY(-30vh);
         }
     }
 
@@ -845,15 +888,15 @@ body {
         }
 
         60% {
-            transform: translateX(-10vw) scaleX(-1) translateY(-20vh);
+            transform: translateX(-10vw) scaleX(1) translateY(-20vh);
         }
 
         80% {
-            transform: translateX(110%) scaleX(-1) translateY(40vh);
+            transform: translateX(110%) scaleX(1) translateY(40vh);
         }
 
         100% {
-            transform: translateX(110%) scaleX(-1) translateY(-30vh);
+            transform: translateX(110%) scaleX(1) translateY(-30vh);
         }
     }
 
@@ -871,16 +914,62 @@ body {
         }
 
         60% {
-            transform: translateX(10vw) scaleX(1) translateY(20vh);
+            transform: translateX(10vw) scaleX(-1) translateY(20vh);
         }
 
         80% {
-            transform: translateX(-110%) scaleX(1) translateY(-40vh);
+            transform: translateX(-110%) scaleX(-1) translateY(-40vh);
         }
 
         100% {
-            transform: translateX(-110%) scaleX(1) translateY(30vh);
+            transform: translateX(-110%) scaleX(-1) translateY(30vh);
         }
     }
 
+}
+
+
+@media screen and (max-width: 390px) {
+
+    body {
+        font-size: 1rem;
+    }
+
+    .fish {
+        width: 160px;
+        height: 100px;
+    }
+
+    .navbar_items img,
+    .game_bar img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .end_modal-content,
+    .rules_content,
+    .modal-content {
+        padding: 10px;
+    }
+
+    #pause-button,
+    #resume-button {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+
+    #return-button {
+
+        font-size: 0.8rem;
+    }
+
+    .end_modal h2,
+    .modal h2 {
+        font-size: 1.3rem;
+    }
+
+    .rules_content--title {
+        font-size: 1.3rem;
+
+    }
 }

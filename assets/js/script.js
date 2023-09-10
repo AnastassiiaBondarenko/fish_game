@@ -57,9 +57,11 @@ document.addEventListener("DOMContentLoaded", () => {
             audioElement.pause();
             audioElement.currentTime = 0;
             soundIcon.src = "assets/images/icon-mute.png";
+            catchSound.muted = true;
         } else {
             audioElement.play();
             soundIcon.src = "assets/images/icon-sound.png";
+            catchSound.muted = false;
         }
         soundOn = !soundOn;
     }
@@ -67,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     audioElement.pause();
     audioElement.currentTime = 0;
     soundIcon.src = "assets/images/icon-mute.png";
+    catchSound.muted = true;
 
     soundControl.addEventListener("click", toggleSound);
 
@@ -144,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     homeButton.addEventListener("click", () => {
         hideModal();
-        endGame()
+
         window.location.href = window.location.origin;
     });
 
@@ -185,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //  end the game
     homeIcon.addEventListener("click", () => {
         if (gameStarted) {
-            pauseGame();
+
             hideModal();
             endGame();
         }
@@ -257,15 +260,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fishElements.forEach((fish) => {
         fish.addEventListener("click", () => {
-            fish.classList.add("wave");
+
             playCatchSound();
             updateScore();
             fish.style.display = "none";
             setTimeout(() => {
                 fish.style.display = "block";
                 moveFishToRandomPosition(fish);
-                fish.classList.remove("wave");
-            }, 200);
+
+            });
         });;
 
         moveFishToRandomPosition(fish);

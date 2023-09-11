@@ -1,7 +1,7 @@
 # Catch Fish
 Welcome to Catch Fish, an addictive and engaging clicking adventure set in an underwater world teeming with colorful marine life. In Catch Fish, players embark on an exhilarating journey where the objective is to catch as many fish as possible by simply clicking on them.
 
-The site can be accessed by this [link]()
+The site can be accessed by this [link](https://anastassiiabondarenko.github.io/fish_game/)
 
 ![full picture](documentation/full.png)
 
@@ -157,16 +157,16 @@ At the top of the game's interface, you'll find a navigation bar featuring essen
   - From the source section drop-down menu, select the **Main** Branch, then click "Save".
   - The page will automatically refresh with a detailed ribbon indicating the successful deployment.
 
-The live link can be found [here](https://AnastassiiaBondarenko.github.io/flowers/)
+The live link can be found [here](https://AnastassiiaBondarenko.github.io/fish_game/)
 
 ## Local Deployment
 
 In order to create a local copy of this project, you can clone it.
 In the IDE terminal, enter the following command to clone my repository:
 
-- `git clone https://github.com/AnastassiiaBondarenko/flowers.git`
+- `git clone https://github.com/AnastassiiaBondarenko/fish_game.git`
 
-- Alternatively, if you use Gitpod, you can [click here](https://gitpod.io/#https://github.com/AnastassiiaBondarenko/flowers), which will start the Gitpod workspace for you.
+- Alternatively, if you use Gitpod, you can [click here](https://gitpod.io/#https://github.com/AnastassiiaBondarenko/fish_game), which will start the Gitpod workspace for you.
 
 ---
 
@@ -178,4 +178,34 @@ Please refer to the [TESTING.md](TESTING.MD) file for all test-related documenta
 
 
 ## Credits
-+ #### Media 
+### Media 
+ - All the background images for the game were created by myself in the [Canva](https://www.canva.com/).
+
+ + All icons were taken from [Icons8](https://icons8.com/).
+
+- [Sound Icon](https://icons8.com/icon/43BYip9sw9uM/audio)
+
+- [Mute Icon](https://icons8.com/icon/WqEx7ozRAQPI/mute)
+
+- [Timer Icon](https://icons8.com/icon/fdlhQIlQLDfz/alarm-clock)
+
+
+- [Score Icon](https://icons8.com/icon/6Cd62kcAzVkG/heart)
+
+- [Play Icon](https://icons8.com/icon/BNSeJxLXPAli/play-button)
+
+- [Home Icon](https://icons8.com/icon/xH4oOksijZAs/home)
+
+- [Pause Icon](https://icons8.com/icon/JsHqAKrFtjnd/sleep-mode)
+
++ All fish pictures were taken from [Freeiconspng](https://www.freeiconspng.com/).
+
+- [1st Fish](https://www.freeiconspng.com/img/3925)
+
+- [2st Fish](https://www.freeiconspng.com/img/26331)
+
++ All sound effects were taken from [Pixabay](https://pixabay.com/).
+
+- [Main Sound](https://pixabay.com/sound-effects/small-waves-onto-the-sand-143040/)
+
+- [Bubble Sound](https://pixabay.com/sound-effects/shooting-sound-fx-159024/)

@@ -108,15 +108,12 @@ body {
     height: auto;
 }
 
-
 .sound_cn {
     width: 4.2rem;
     height: auto;
     cursor: pointer;
     margin-left: -1rem;
 }
-
-
 
 .score_cn {
     display: inline-block;
@@ -159,7 +156,6 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-right: 10px;
-
 }
 
 #pause-button img {
@@ -172,7 +168,6 @@ body {
 #resume-button:hover {
     transform: scale(1.1);
 }
-
 
 /* ----- main ----- */
 .main {
@@ -236,10 +231,6 @@ body {
     display: flex;
 }
 
-
-
-
-
 .rules_content {
     font-family: 'Questrial', sans-serif;
     background-color: rgb(117, 215, 222);
@@ -265,7 +256,6 @@ body {
 
 }
 
-
 .rules_overlay {
     display: none;
     position: fixed;
@@ -280,7 +270,6 @@ body {
 .rules_overlay.show {
     display: block;
 }
-
 
 #rules-link {
     cursor: pointer;
@@ -301,14 +290,12 @@ body {
     margin-top: 10px;
 }
 
-
-
 .rules_close:hover {
     transform: scale(1.1);
 }
 
-
 /* modal  */
+
 .modal {
     position: fixed;
     top: 0;
@@ -377,11 +364,6 @@ body {
     transform: scale(1.1);
 }
 
-
-
-
-
-
 /* fish style  */
 .fish-container {
     width: 100%;
@@ -401,14 +383,12 @@ body {
     display: none;
 }
 
-
 #fish1 {
     animation: swim1 15s linear infinite;
     background-image: url('../images/fishgame.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
-
 
 #fish2 {
     animation: swim2 15s linear infinite;
@@ -423,7 +403,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
-
 
 #fish4 {
     animation: swim4 15s linear infinite;
@@ -537,11 +516,7 @@ body {
     }
 }
 
-
-
-
 /* end game style  */
-
 
 .end_modal {
     position: fixed;
@@ -569,8 +544,6 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
-
 
 .end_modal h2 {
     font-size: 2.5rem;
@@ -693,7 +666,6 @@ body {
 /* Adjust styles for tablets and smaller screens */
 @media screen and (max-width: 768px) {
 
-
     body {
         font-size: 1.2rem;
     }
@@ -701,8 +673,6 @@ body {
     .navbar {
         padding: 0.5rem 1rem;
     }
-
-
 
     .navbar_items li:not(:first-child) {
         margin-left: 1rem;
@@ -883,8 +853,6 @@ body {
         height: 130px;
     }
 
-
-
     .end_modal-content,
     .rules_content,
     .modal-content {
@@ -911,12 +879,10 @@ body {
 
     .rules_content--title {
         font-size: 1.6rem;
-
     }
 
     .rules_content--howtoplay {
         font-size: 1rem;
-
     }
 
     #pause-button,
@@ -926,7 +892,6 @@ body {
     }
 
     #return-button {
-
         font-size: 1rem;
     }
 
@@ -1067,7 +1032,6 @@ body {
     }
 
     #return-button {
-
         font-size: 0.8rem;
     }
 
@@ -1078,7 +1042,6 @@ body {
 
     .rules_content--title {
         font-size: 1.3rem;
-
     }
 
     .contact-info {

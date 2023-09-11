@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const confirmationModal = document.getElementById("confirmation-modal");
     const continueButton = document.getElementById("continue-button");
     const homeButton = document.getElementById("home-button");
-
     const endModal = document.getElementById("end-game-modal");
     const finalScore = document.getElementById("final-score");
     const returnButton = document.getElementById("return-button");

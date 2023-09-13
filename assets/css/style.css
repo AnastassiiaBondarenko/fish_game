@@ -184,6 +184,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    overflow: hidden;
 }
 
 .main_block {
@@ -364,6 +365,14 @@ body {
     transform: scale(1.1);
 }
 
+/* game section  */
+.game_section {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+
 /* fish style  */
 .fish-container {
     width: 100%;
@@ -391,21 +400,21 @@ body {
 }
 
 #fish2 {
-    animation: swim2 15s linear infinite;
+    animation: swim2 12s linear infinite;
     background-image: url('../images/fishgame.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 #fish3 {
-    animation: swim3 15s linear infinite;
+    animation: swim3 12s linear infinite;
     background-image: url('../images/fishgame1.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 #fish4 {
-    animation: swim4 15s linear infinite;
+    animation: swim4 12s linear infinite;
     background-image: url('../images/fishgame1.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -413,108 +422,118 @@ body {
 
 @keyframes swim1 {
     0% {
-        transform: translateX(-90%) scaleX(1) translateY(-90%);
+        transform: translateX(90%) scaleX(1) translateY(-90%);
     }
 
     20% {
-        transform: translateX(25vw) scaleX(1) translateY(10vh);
+        transform: translateX(65vw) scaleX(1) translateY(50vh);
     }
 
     40% {
-        transform: translateX(50vw) scaleX(1) translateY(-30vh);
+        transform: translateX(5vw) scaleX(-1) translateY(15vh);
     }
 
     60% {
-        transform: translateX(25vw) scaleX(-1) translateY(20vh);
+        transform: translateX(45vw) scaleX(1) translateY(60vh);
     }
 
     80% {
-        transform: translateX(-100%) scaleX(-1) translateY(-40vh);
+        transform: translateX(68vw) scaleX(1) translateY(-5vh);
     }
 
     100% {
-        transform: translateX(-100%) scaleX(-1) translateY(30vh);
+        transform: translateX(100vw) scaleX(1) translateY(40vh);
     }
 }
 
 @keyframes swim2 {
     0% {
-        transform: translateX(100%) scaleX(-1) translateY(100%);
+        transform: translateX(400%) scaleX(-1) translateY(300%);
     }
 
     20% {
-        transform: translateX(-25vw) scaleX(-1) translateY(-10vh);
+        transform: translateX(80vw) scaleX(-1) translateY(-7vh);
     }
 
     40% {
-        transform: translateX(-50vw) scaleX(-1) translateY(30vh);
+        transform: translateX(40vw) scaleX(-1) translateY(20vh);
     }
 
     60% {
-        transform: translateX(-25vw) scaleX(1) translateY(-20vh);
+        transform: translateX(1vw) scaleX(-1) translateY(10vh);
     }
 
     80% {
-        transform: translateX(100%) scaleX(1) translateY(40vh);
+        transform: translateX(50vw) scaleX(1) translateY(-6vh);
     }
 
     100% {
-        transform: translateX(100%) scaleX(1) translateY(-30vh);
+        transform: translateX(450%) scaleX(1) translateY(300%);
     }
 }
 
 @keyframes swim3 {
     0% {
-        transform: translateX(100%) scaleX(-1) translateY(100%);
+        transform: translateX(-90%) scaleX(1) translateY(-90%);
     }
 
     20% {
-        transform: translateX(-25vw) scaleX(-1) translateY(-10vh);
+        transform: translateX(30vw) scaleX(1) translateY(60vh);
     }
 
     40% {
-        transform: translateX(-50vw) scaleX(-1) translateY(30vh);
+        transform: translateX(90vw) scaleX(1) translateY(20vh);
     }
 
     60% {
-        transform: translateX(-25vw) scaleX(1) translateY(-20vh);
+        transform: translateX(60vw) scaleX(-1) translateY(60vh);
     }
 
     80% {
-        transform: translateX(100%) scaleX(1) translateY(40vh);
+        transform: translateX(30vw) scaleX(-1) translateY(-10vh);
     }
 
     100% {
-        transform: translateX(100%) scaleX(1) translateY(-30vh);
+        transform: translateX(-20vw) scaleX(-1) translateY(20vh);
     }
 }
+
+
 
 
 @keyframes swim4 {
     0% {
-        transform: translateX(-100%) scaleX(1) translateY(-100%);
+        transform: translateX(-100%) scaleX(1) translateY(90%);
     }
 
     20% {
-        transform: translateX(25vw) scaleX(1) translateY(10vh);
+        transform: translateX(40vw) scaleX(1) translateY(60vh);
     }
 
     40% {
-        transform: translateX(50vw) scaleX(1) translateY(-30vh);
+        transform: translateX(60vw) scaleX(1) translateY(20vh);
     }
 
     60% {
-        transform: translateX(25vw) scaleX(-1) translateY(20vh);
+        transform: translateX(75vw) scaleX(1) translateY(55vh);
     }
 
     80% {
-        transform: translateX(-100%) scaleX(-1) translateY(-40vh);
+        transform: translateX(35vw) scaleX(-1) translateY(-10vh);
     }
 
     100% {
-        transform: translateX(-100%) scaleX(-1) translateY(30vh);
+        transform: translateX(-20vw) scaleX(-1) translateY(40vh);
     }
 }
+
+
+
+
+
+
+
+
 
 /* end game style  */
 
@@ -663,6 +682,12 @@ body {
     color: #18545d;
 }
 
+header,
+footer {
+    position: relative;
+    z-index: 0;
+}
+
 /* Adjust styles for tablets and smaller screens */
 @media screen and (max-width: 768px) {
 
@@ -710,110 +735,6 @@ body {
         font-size: 1.1rem;
     }
 
-    @keyframes swim1 {
-        0% {
-            transform: translateX(-90%) scaleX(1) translateY(-90%);
-        }
-
-        20% {
-            transform: translateX(10vw) scaleX(1) translateY(10vh);
-        }
-
-        40% {
-            transform: translateX(30vw) scaleX(1) translateY(-30vh);
-        }
-
-        60% {
-            transform: translateX(10vw) scaleX(-1) translateY(20vh);
-        }
-
-        80% {
-            transform: translateX(-90%) scaleX(-1) translateY(-40vh);
-        }
-
-        100% {
-            transform: translateX(-90%) scaleX(-1) translateY(30vh);
-        }
-    }
-
-    @keyframes swim2 {
-        0% {
-            transform: translateX(100%) scaleX(-1) translateY(100%);
-        }
-
-        20% {
-            transform: translateX(-10vw) scaleX(-1) translateY(-10vh);
-        }
-
-        40% {
-            transform: translateX(-30vw) scaleX(-1) translateY(30vh);
-        }
-
-        60% {
-            transform: translateX(-10vw) scaleX(1) translateY(-20vh);
-        }
-
-        80% {
-            transform: translateX(100%) scaleX(1) translateY(40vh);
-        }
-
-        100% {
-            transform: translateX(100%) scaleX(1) translateY(-30vh);
-        }
-    }
-
-    @keyframes swim3 {
-        0% {
-            transform: translateX(100%) scaleX(-1) translateY(100%);
-        }
-
-        20% {
-            transform: translateX(-10vw) scaleX(-1) translateY(-10vh);
-        }
-
-        40% {
-            transform: translateX(-30vw) scaleX(-1) translateY(30vh);
-        }
-
-        60% {
-            transform: translateX(-10vw) scaleX(1) translateY(-20vh);
-        }
-
-        80% {
-            transform: translateX(100%) scaleX(1) translateY(40vh);
-        }
-
-        100% {
-            transform: translateX(100%) scaleX(1) translateY(-30vh);
-        }
-    }
-
-    @keyframes swim4 {
-        0% {
-            transform: translateX(-100%) scaleX(1) translateY(-100%);
-        }
-
-        20% {
-            transform: translateX(10vw) scaleX(1) translateY(10vh);
-        }
-
-        40% {
-            transform: translateX(30vw) scaleX(1) translateY(-30vh);
-        }
-
-        60% {
-            transform: translateX(10vw) scaleX(-1) translateY(20vh);
-        }
-
-        80% {
-            transform: translateX(-100%) scaleX(-1) translateY(-40vh);
-        }
-
-        100% {
-            transform: translateX(-100%) scaleX(-1) translateY(30vh);
-        }
-    }
-
 
 }
 
@@ -846,6 +767,11 @@ body {
 
     .main_title {
         font-size: 4rem;
+    }
+
+    .btn_play {
+        padding-top: 6rem;
+        width: 6rem;
     }
 
     .fish {
@@ -895,109 +821,7 @@ body {
         font-size: 1rem;
     }
 
-    @keyframes swim1 {
-        0% {
-            transform: translateX(-110%) scaleX(1) translateY(-90%);
-        }
 
-        20% {
-            transform: translateX(10vw) scaleX(1) translateY(10vh);
-        }
-
-        40% {
-            transform: translateX(30vw) scaleX(1) translateY(-30vh);
-        }
-
-        60% {
-            transform: translateX(10vw) scaleX(-1) translateY(20vh);
-        }
-
-        80% {
-            transform: translateX(-110%) scaleX(-1) translateY(-40vh);
-        }
-
-        100% {
-            transform: translateX(-110%) scaleX(-1) translateY(30vh);
-        }
-    }
-
-    @keyframes swim2 {
-        0% {
-            transform: translateX(110%) scaleX(-1) translateY(110%);
-        }
-
-        20% {
-            transform: translateX(-10vw) scaleX(-1) translateY(-10vh);
-        }
-
-        40% {
-            transform: translateX(-30vw) scaleX(-1) translateY(30vh);
-        }
-
-        60% {
-            transform: translateX(-10vw) scaleX(1) translateY(-20vh);
-        }
-
-        80% {
-            transform: translateX(110%) scaleX(1) translateY(40vh);
-        }
-
-        100% {
-            transform: translateX(110%) scaleX(1) translateY(-30vh);
-        }
-    }
-
-    @keyframes swim3 {
-        0% {
-            transform: translateX(110%) scaleX(-1) translateY(110%);
-        }
-
-        20% {
-            transform: translateX(-10vw) scaleX(-1) translateY(-10vh);
-        }
-
-        40% {
-            transform: translateX(-30vw) scaleX(-1) translateY(30vh);
-        }
-
-        60% {
-            transform: translateX(-10vw) scaleX(1) translateY(-20vh);
-        }
-
-        80% {
-            transform: translateX(110%) scaleX(1) translateY(40vh);
-        }
-
-        100% {
-            transform: translateX(110%) scaleX(1) translateY(-30vh);
-        }
-    }
-
-    @keyframes swim4 {
-        0% {
-            transform: translateX(-110%) scaleX(1) translateY(-110%);
-        }
-
-        20% {
-            transform: translateX(10vw) scaleX(1) translateY(10vh);
-        }
-
-        40% {
-            transform: translateX(30vw) scaleX(1) translateY(-30vh);
-        }
-
-        60% {
-            transform: translateX(10vw) scaleX(-1) translateY(20vh);
-        }
-
-        80% {
-            transform: translateX(-110%) scaleX(-1) translateY(-40vh);
-        }
-
-        100% {
-            transform: translateX(-110%) scaleX(-1) translateY(30vh);
-        }
-    }
 
 }
 
@@ -1007,6 +831,15 @@ body {
     body {
         font-size: 1rem;
     }
+
+    .main_title {
+        font-size: 3.5rem;
+    }
+
+    .btn_play {
+        width: 4rem;
+    }
+
 
     .fish {
         width: 160px;

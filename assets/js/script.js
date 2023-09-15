@@ -30,6 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const footer = document.getElementById("hidden-footer");
     const closeFooterButton = document.getElementById("close-footer");
 
+    let gameStarted = false;
+    let timerInterval;
+    let timeLeft = 60;
+    let gameEnded = false;
+    let soundOn = false;
+    let score = 0;
     // Open and close rules section
     /**
      * This function opens the rules section and handles game pause logic if the game has started.
@@ -60,9 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
     rulesLink.addEventListener("click", openRulesSection);
     closeButton.addEventListener("click", closeRulesSection);
 
-    // Sound on and off
-    let soundOn = false;
-
     /**
      * This function toggles the game sound on and off.
      */
@@ -88,13 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     soundControl.addEventListener("click", toggleSound);
 
-    // Start game and pause
-    let gameStarted = false;
-    let timerInterval;
-    let timeLeft = 60;
-    let gameEnded = false;
-
-    // Function to start the game
     /**
      * This function starts the game, hides the main title and play block,
      * displays the game section, sets up timers, and handles game-related UI changes.
@@ -129,7 +125,6 @@ document.addEventListener("DOMContentLoaded", () => {
         pauseButton.addEventListener("click", pauseGame);
     }
 
-    // Timer
     /**
      * This function updates the timer display with the remaining time in minutes and seconds.
      */
@@ -139,7 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
         timer.textContent = `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
     }
 
-    // Pause
     pauseButton.style.display = "none";
     resumeButton.style.display = "none";
     confirmationModal.style.display = "none";
@@ -162,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     homeButton.addEventListener("click", () => {
         hideModal();
-        window.location.href = "/";
+        window.location.href = "https://anastassiiabondarenko.github.io/fish_game/";
     });
 
     /**
@@ -180,7 +174,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Resume
     /**
      * This function resumes the game, restarts the timer, and resumes fish animations.
      */
@@ -227,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
      */
     function closeModalAndRedirect() {
         endModal.style.display = "none";
-        window.location.href = "/";
+        window.location.href = "https://anastassiiabondarenko.github.io/fish_game/";
         gameEnded = false;
     }
 
@@ -241,8 +234,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Game area
-
-    let score = 0;
 
     /**
      * This function plays the catch sound when a fish is caught.
@@ -296,14 +287,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // footer 
     /**
      * This function closes the footer and makes it unvisible.
      */
     function hideFooter() {
         footer.style.bottom = "-300px";
     }
-
 
     toggleButton.addEventListener("click", () => {
         if (footer.style.bottom === "-300px" || !footer.style.bottom) {
@@ -320,10 +309,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-
     closeFooterButton.addEventListener("click", () => {
         hideFooter();
     });
-
-
 });

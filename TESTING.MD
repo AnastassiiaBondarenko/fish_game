@@ -66,13 +66,6 @@ To confirm correct functionality, responsiveness and appearance:
 | Contact close |  If the contact modal or section is open, try closing it. | The contact modal or section should close, and the footer should return to its default state. | Yes | Yes | --- |
 
 
-
-
-
-
-
-
-
 ---
 ## Validator testing
 + ### HTML
@@ -101,8 +94,11 @@ To confirm correct functionality, responsiveness and appearance:
 ​
 ## Bugs
 + ### Solved bugs
-    
- ---
-+ ### Unsolved bugs
+   - Redirection Error: The original issue was related to a redirection error when trying to redirect to window.location.origin at the end of the game. We fixed this by changing it to a relative URL using window.location.href = "https://anastassiiabondarenko.github.io/fish_game/";. This ensures that the game redirects to the link of the page, which should work correctly.
 
-    ---
+
+   - Bug: Score and Timer Icons Disappearing
+Description: Score and timer icons were disappearing when the game started because they were placed inside <span> elements, and the JavaScript code was modifying the content of these elements.
+Solution: The icons were repositioned outside of the <span> elements in the HTML structure, and the JavaScript code was adjusted to target the <span> element directly for updating the timer's text content. This separation of icons and text content resolved the issue.
+
+ ---

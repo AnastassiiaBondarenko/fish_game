@@ -25,34 +25,51 @@ To confirm correct functionality, responsiveness and appearance:
 ---
 ## Responsiveness
 
-+ Here's how the full pages of the website look like:
-(checked with the GoFullSize extension in Chrome)
-
-   - ![Home page](documentation/homefull.png)
-
-   - ![Gallery page](documentation/galleryfull.png)
-
-   - ![Contact us page](documentation/contactfull.png)
-
-   - ![Response page](documentation/responsefull.png)
-
-+ The website was checked with [Responsive Website Design Tester](https://responsivedesignchecker.com/).
++ The website was checked with [Responsive Viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb) extension in Google Chrome.
 
 - Desktop Screen:
 
-![Desktop](documentation/desktop11.gif)
+![Desktop](documentation/Laptop-1-1440x900.png)
+![Desktop](documentation/Laptop-3-1280x950.png)
 
  - Tablet Screen:
 
- ![Tablet](documentation/tablet11.gif)
+ ![Tablet](documentation/iPad-768x1024.png)
+  ![Tablet](documentation/iPad-Mini-768x1024.png)
 
   - Mobile Screen:
 
-  ![Mobile ](documentation/phone11.gif)
+  ![Mobile ](documentation/iPhone-XS-X-375x812.png)
+   ![Mobile ](documentation/Galaxy-S5-360x640.png)
+    ![Mobile ](documentation/Galaxy-S9-Plus-S8-Plus-412x846.png)
 
 + The functionality of the links in the website was checked as well by different users.
 
 ## Manual testing
+
+
+| feature | action | expected result | tested | passed | comments |
+| --- | --- | --- | --- | --- | --- |
+| Header | | | | | |
+| Home | Click on the "Home" link in the header. | The user should be redirected to the main page if game started.| Yes | Yes| --- |
+| Rules| Click on the "Rules" link in the header. | The rules section or modal should open, providing instructions for the game. | Yes | Yes | --- |
+| Sound On/Off | Click on the sound control icon in the header to toggle sound on and off. | Sound should either play or stop based on the current state, and the sound icon should change accordingly. | Yes | Yes | --- |
+|  Pause |  Click on the "Pause" button during gameplay. | The game should pause, and a modal should appear asking if the player wants to continue or return to the home page. | Yes | Yes | ---  |
+| Resume | Click on the "Continue" button in the pause modal. | The game should resume from where it was paused. | Yes | Yes | --- |
+| Timer | Observe the timer in the game. | The timer should count down from 01:00 to 00:00. When it reaches 00:00, the game should end. | Yes | Yes | --- |
+| Game Area | | | | | |
+| Play | Click on the "Play" button. | The game should start, and the player should see the game area with fish swimming. | Yes | Yes | --- |
+| Fish |  Click on one of the fish swimming in the game area. | The clicked fish should disappear, a catch sound should play, and the player's score should increase. | Yes | Yes | --- |
+| Game Over | Wait for the game timer to reach 00:00. | A "Game Over" modal should appear, displaying the player's final score. | Yes | Yes | --- |
+| Footer | | | | | |
+| Contact | Click on the "Contact Us" button located in the footer. | A contact modal or section should appear with contact information, including email and phone number. | Yes | Yes | --- |
+| Contact close |  If the contact modal or section is open, try closing it. | The contact modal or section should close, and the footer should return to its default state. | Yes | Yes | --- |
+
+
+
+
+
+
 
 
 
@@ -63,21 +80,7 @@ To confirm correct functionality, responsiveness and appearance:
     - No errors or warnings were detected when passing through the official W3C validator.
 
        ![Home Page HTML Validator](documentation/validator1.png)
-    
-  #### Gallery Page
-   - No errors or warnings were detected when passing through the official W3C validator.
-
-    ![Gallery Page HTML Validator](documentation/validator2.png)
-
-  #### Contact Page
-    - No errors or warnings were detected when passing through the official W3C validator.
-
-    ![Contact Page HTML Validator](documentation/validator3.png)
-
-  #### Response Page
-    - No errors or warnings were detected when passing through the official W3C validator.
-
-    ![Response Page HTML Validator](documentation/validator4.png)
+ 
     
 + ### CSS
 

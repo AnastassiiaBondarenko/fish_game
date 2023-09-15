@@ -1,3 +1,4 @@
+/* jshint esversion: 8, jquery: true, scripturl: true */
 // This event listener ensures that the DOM is fully loaded before executing the script
 document.addEventListener("DOMContentLoaded", () => {
     // Get references to various DOM elements

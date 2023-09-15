@@ -128,7 +128,7 @@ At the top of the game's interface, you'll find a navigation bar featuring essen
 
 - Informational Text: Textual information, such as game instructions and contact details in the footer, is presented in clear and legible colors, ensuring that players can easily read and understand important information.
 
-### Overall, the color scheme in the Catch Fish game is thoughtfully designed to create an immersive underwater world while providing clarity and interactivity for players. It enhances the gaming experience by combining aesthetics with functionality.
+*Overall, the color scheme in the Catch Fish game is thoughtfully designed to create an immersive underwater world while providing clarity and interactivity for players. It enhances the gaming experience by combining aesthetics with functionality.*
 
 
 

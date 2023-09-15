@@ -5,7 +5,6 @@
     padding: 0;
 }
 
-
 ul {
     list-style: none;
     margin: 0;
@@ -254,7 +253,6 @@ body {
 .rules_content--howtoplay {
     font-size: 1.3rem;
     font-family: 'Questrial', sans-serif;
-
 }
 
 .rules_overlay {
@@ -279,7 +277,6 @@ body {
 #rules-link:hover {
     text-decoration: underline;
     color: #0099cc;
-
 }
 
 .rules_close {
@@ -371,7 +368,6 @@ body {
     height: 100%;
     display: none;
 }
-
 
 /* fish style  */
 .fish-container {
@@ -498,9 +494,6 @@ body {
     }
 }
 
-
-
-
 @keyframes swim4 {
     0% {
         transform: translateX(-100%) scaleX(1) translateY(90%);
@@ -526,14 +519,6 @@ body {
         transform: translateX(-20vw) scaleX(-1) translateY(40vh);
     }
 }
-
-
-
-
-
-
-
-
 
 /* end game style  */
 
@@ -731,14 +716,9 @@ footer {
     }
 
     #return-button {
-
         font-size: 1.1rem;
     }
-
-
 }
-
-
 
 /* Adjust styles for mobile devices */
 @media screen and (max-width: 576px) {
@@ -820,9 +800,6 @@ footer {
     #return-button {
         font-size: 1rem;
     }
-
-
-
 }
 
 
@@ -839,7 +816,6 @@ footer {
     .btn_play {
         width: 4rem;
     }
-
 
     .fish {
         width: 160px;

@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     homeButton.addEventListener("click", () => {
         hideModal();
-        window.location.href = "https://anastassiiabondarenko.github.io/fish_game/";
+        window.location.href = "/";
     });
 
     /**
@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
      */
     function closeModalAndRedirect() {
         endModal.style.display = "none";
-        window.location.href = "https://anastassiiabondarenko.github.io/fish_game/";
+        window.location.href = "/";
         gameEnded = false;
     }
 

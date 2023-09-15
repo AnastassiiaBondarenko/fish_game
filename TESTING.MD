@@ -93,17 +93,9 @@ To confirm correct functionality, responsiveness and appearance:
 
     - Using lighthouse in devtools, I made sure the site works well, is accessible, and the colors and fonts chosen are readable.
     
-  ### Home page
 
 ![Home Page Lighthouse](documentation/image.png)
 
- ### Gallery page
-
-![Gallery Page Lighthouse](documentation/image1.png)
-
- ### Contact page
-
-![Contact Us Page Lighthouse](documentation/image2.png)
 
 ---
 ​

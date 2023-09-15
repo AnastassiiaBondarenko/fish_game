@@ -32,16 +32,16 @@ To confirm correct functionality, responsiveness and appearance:
 ![Desktop](documentation/Laptop-1-1440x900.png)
 ![Desktop](documentation/Laptop-3-1280x950.png)
 
- - Tablet Screen:
+- Tablet Screen:
 
- ![Tablet](documentation/iPad-768x1024.png)
-  ![Tablet](documentation/iPad-Mini-768x1024.png)
+![Tablet](documentation/iPad-768x1024.png)
+![Tablet](documentation/iPad-Mini-768x1024.png)
 
-  - Mobile Screen:
+- Mobile Screen:
 
-  ![Mobile ](documentation/iPhone-XS-X-375x812.png)
-   ![Mobile ](documentation/Galaxy-S5-360x640.png)
-    ![Mobile ](documentation/Galaxy-S9-Plus-S8-Plus-412x846.png)
+![Mobile ](documentation/iPhone-XS-X-375x812.png)
+![Mobile ](documentation/Galaxy-S5-360x640.png)
+![Mobile ](documentation/Galaxy-S9-Plus-S8-Plus-412x846.png)
 
 + The functionality of the links in the website was checked as well by different users.
 
@@ -79,7 +79,7 @@ To confirm correct functionality, responsiveness and appearance:
   #### Home Page
     - No errors or warnings were detected when passing through the official W3C validator.
 
-       ![Home Page HTML Validator](documentation/validator1.png)
+    ![Home Page HTML Validator](documentation/validator1.png)
  
     
 + ### CSS

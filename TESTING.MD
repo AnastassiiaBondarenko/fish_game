@@ -94,7 +94,7 @@ To confirm correct functionality, responsiveness and appearance:
 ​
 ## Bugs
 + ### Solved bugs
-   - Redirection Error: The original issue was related to a redirection error when trying to redirect to window.location.origin at the end of the game. We fixed this by changing it to a relative URL using window.location.href = "https://anastassiiabondarenko.github.io/fish_game/";. This ensures that the game redirects to the link of the page, which should work correctly.
+   - Redirection Error: The original issue was related to a redirection error when trying to redirect to window.location.origin at the end of the game. I fixed this by changing it to github URL using window.location.href = "https://anastassiiabondarenko.github.io/fish_game/";. This ensures that the game redirects to the link of the page, which should work correctly.
 
 
    - Bug: Score and Timer Icons Disappearing

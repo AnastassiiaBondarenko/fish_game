@@ -91,7 +91,7 @@ At the top of the game's interface, you'll find a navigation bar featuring essen
 
 
 
-### And when you hover your mouse over each link on this website the links/icon change colour or increase, this is designed for user convenience and understanding clickable links.
+*And when you hover your mouse over each link on this website the links/icon change colour or increase, this is designed for user convenience and understanding clickable links.*
 
 ---
 ## Technologies Used
